@@ -32,5 +32,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- You may style the button by overriding class "cmp-revoke-consent" -->
 <button class="cmp-revoke-consent">Revoke Consent</button>
+
+<script>
+    window.addEventListener('message', (event) => {
+    const consentStatusMessage = event.data.message
+    if (consentStatusMessage === 'single_upload_consent_given') {
+       window.location.reload()
+    }
+   })
+</script>
 	
 </body>
