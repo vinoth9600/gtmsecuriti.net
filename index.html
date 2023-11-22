@@ -14,14 +14,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+
 <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-<script
-	defer
-	data-strict-csp
-	src="https://cdn-prod.securiti.ai/consent/cookie-consent-sdk-strict-csp.js"
-	data-tenant-uuid="fc7a1c8b-281a-461f-8245-d27a7164f69b"
-	data-domain-uuid="3b39352d-51e3-48b8-a90a-ec9afc2ddbbd"
-	data-backend-url="https://app.securiti.ai">
+<script>
+(function () {
+	var s = document.createElement('script');
+	s.src = 'https://cdn-prod.securiti.ai/consent/cookie-consent-sdk-loader.js';
+	s.setAttribute('data-tenant-uuid', 'fc7a1c8b-281a-461f-8245-d27a7164f69b');
+	s.setAttribute('data-domain-uuid', '3b39352d-51e3-48b8-a90a-ec9afc2ddbbd');
+	s.setAttribute('data-backend-url', 'https://app.securiti.ai');
+	s.setAttribute('data-skip-css', 'false');
+	s.defer = true;
+	var parent_node = document.head || document.body;
+	parent_node.appendChild(s);
+})()
 </script>
 
 <!-- You may style the button by overriding class "cmp-revoke-consent" -->
